@@ -1,0 +1,5 @@
+*.pèm
+.env
+.history
+.cache
+ 
