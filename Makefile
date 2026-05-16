@@ -1,4 +1,4 @@
-CONFIGS = alacritty hypr omarchy waybar
+CONFIGS = alacritty chromium-flags.conf hypr pwsafe omarchy waybar
 
 HOME_DIR := $(HOME)
 REPO_DIR := $(HOME_DIR)/Configs
@@ -7,13 +7,13 @@ REPO_DIR := $(HOME_DIR)/Configs
 
 move:
 	@echo "Moving configs into omarchy-configs repo..."
-	@for dir in $(CONFIGS); do \
-		mkdir -p $(REPO_DIR)/$$dir/.config; \
-		if [ -d $(HOME_DIR)/.config/$$dir ]; then \
-			mv $(HOME_DIR)/.config/$$dir $(REPO_DIR)/$$dir/.config/; \
-			printf "Moved $$dir\n"; \
+	@for item in $(CONFIGS); do \
+		if [ -e $(HOME_DIR)/.config/$$item ]; then \
+			mkdir -p $(REPO_DIR)/$$item/.config; \
+			mv $(HOME_DIR)/.config/$$item $(REPO_DIR)/$$item/.config/; \
+			printf "Moved $$item\n"; \
 		else \
-			printf "Skipping $$dir (not found)\n"; \
+			printf "Skipping $$item (not found)\n"; \
 		fi; \
 	done
 
@@ -29,12 +29,12 @@ unlink:
 
 restore: unlink
 	@echo "Restoring configs back into ~/.config..."
-	@for dir in $(CONFIGS); do \
-		if [ -d $(REPO_DIR)/$$dir/.config/$$dir ]; then \
-			mv $(REPO_DIR)/$$dir/.config/$$dir $(HOME_DIR)/.config/; \
-			printf "Restored $$dir\n"; \
+	@for item in $(CONFIGS); do \
+		if [ -e $(REPO_DIR)/$$item/.config/$$item ]; then \
+			mv $(REPO_DIR)/$$item/.config/$$item $(HOME_DIR)/.config/; \
+			printf "Restored $$item\n"; \
 		else \
-			printf "Skipping $$dir (not found in repo)\n"; \
+			printf "Skipping $$item (not found in repo)\n"; \
 		fi; \
 	done
 
