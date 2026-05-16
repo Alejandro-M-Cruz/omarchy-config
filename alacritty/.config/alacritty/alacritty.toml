@@ -13,7 +13,7 @@ program = "/usr/bin/fish"
 normal = { family = "JetBrainsMono Nerd Font" }
 bold = { family = "JetBrainsMono Nerd Font" }
 italic = { family = "JetBrainsMono Nerd Font" }
-size = 14
+size = 13
 
 [window]
 padding.x = 14
