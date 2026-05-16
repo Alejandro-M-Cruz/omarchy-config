@@ -1,32 +1,38 @@
-# Omarchy Mars Theme
+# Omarchy Midnight Theme
 
-This is the Mars Theme for [Omarchy.org](https://omarchy.org).
+A blacked-out theme for DHH's [Omarchy](https://omarchy.org), an opinionated Arch Linux setup, that gives you the inky blacks that your OLED monitor craves.
 
-<p align="center">
-  <img src="theme.png" alt="Mars Theme Preview">
-</p>
+## Preview
+
+![preview image](https://i.imgur.com/Tt1yM5i.png)
+
+## Wallpapers
+
+All wallpapers are pure black (#000000) as a base and have white/grayscale ASCII art on top of that. The default wallpaper is pure black.
+
+The shortcut for switching wallpapers is <kbd>Ctrl</kbd>+<kbd>Super</kbd>+<kbd>Space</kbd>
+
+<table>
+  <tr>
+    <td>OLED Black</td>
+    <td>Hand of Adam</td>
+    <td>Omarchy Window</td>
+  </tr>
+  <tr>
+    <td><img src="backgrounds/1-oled-black.jpg" width="220" alt="OLED Black"></td>
+    <td><img src="backgrounds/2-hand-of-adam.png" width="220" alt="Hand of Adam"></td>
+    <td><img src="backgrounds/3-omarchy-window.png" width="220" alt="Omarchy Window"></td>
+  </tr>
+</table>
 
 ## Installation
 
-To install this theme, simply use the `omarchy-theme-install` command:
+The following command needs to be run to install 
 
 ```bash
-omarchy-theme-install https://github.com/steve-lohmeyer/omarchy-mars-theme
+omarchy-theme-install https://github.com/JaxonWright/omarchy-midnight-theme.git
 ```
 
-## Included Configurations
+## Usage
 
-This theme includes configurations for:
-
-- Alacritty (alacritty.toml)
-- btop (btop.theme)
-- Hyprland (hyprland.conf, hyprlock.conf)
-- Mako (mako.ini)
-- Neovim (neovim.lua)
-- Waybar (waybar.css)
-- Walker (walker.css)
-- SwayOSD (swayosd.css)
-- Several Desktop Backgrounds **some images courtesy of SpaceX
-
-## Neovim theme
-[https://github.com/steve-lohmeyer/mars.nvim](https://github.com/steve-lohmeyer/mars.nvim)
+Once installed, press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Super</kbd>+<kbd>Space</kbd>, select "Midnight" and everything should refresh automatically
