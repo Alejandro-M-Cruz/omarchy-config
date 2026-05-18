@@ -1,3 +1,4 @@
+DOTFILES = bash
 CONFIGS = alacritty chromium-flags.conf hypr mimeapps.list omarchy pwsafe starship.toml waybar
 
 HOME_DIR := $(HOME)
@@ -20,11 +21,13 @@ move:
 link:
 	@echo "Creating symlinks with stow..."
 	@cd $(REPO_DIR) && stow $(CONFIGS)
+	@cd $(REPO_DIR) && stow $(DOTFILES)
 	@echo "Done."
 
 unlink:
 	@echo "Removing symlinks..."
 	@cd $(REPO_DIR) && stow -D $(CONFIGS)
+	@cd $(REPO_DIR) && stow -D $(DOTFILES)
 	@echo "Done."
 
 restore: unlink
@@ -41,3 +44,5 @@ restore: unlink
 status:
 	@echo "Current symlinks in ~/.config:"
 	@find $(HOME_DIR)/.config -maxdepth 1 -type l -ls
+	@echo "Current symlinks in home directory:"
+	@find $(HOME_DIR) -maxdepth 1 -type l -ls
