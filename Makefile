@@ -1,4 +1,4 @@
-CONFIGS = alacritty chromium-flags.conf hypr pwsafe omarchy waybar
+CONFIGS = alacritty chromium-flags.conf hypr mimeapps.list omarchy pwsafe starship.toml waybar
 
 HOME_DIR := $(HOME)
 REPO_DIR := $(HOME_DIR)/Configs
