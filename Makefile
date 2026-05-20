@@ -1,5 +1,5 @@
 DOTFILES = bash
-CONFIGS = alacritty chromium-flags.conf hypr mimeapps.list omarchy pwsafe starship.toml waybar
+CONFIGS = alacritty chromium-flags.conf foot ghostty hypr kitty mimeapps.list omarchy pwsafe starship.toml waybar
 
 HOME_DIR := $(HOME)
 REPO_DIR := $(HOME_DIR)/Configs
