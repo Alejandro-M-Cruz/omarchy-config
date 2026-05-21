@@ -1,4 +1,4 @@
-DOTFILES = bash
+DOTFILES = bash zsh
 CONFIGS = alacritty chromium-flags.conf foot ghostty hypr kitty mimeapps.list omarchy pwsafe starship.toml waybar
 
 HOME_DIR := $(HOME)
