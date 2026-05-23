@@ -1,18 +1,18 @@
 DOTFILES = bash zsh
-CONFIGS = alacritty chromium-flags.conf foot ghostty hypr kitty mimeapps.list omarchy pwsafe starship.toml waybar
+CONFIGS = alacritty chromium-flags.conf Code foot ghostty hypr kitty mimeapps.list omarchy pwsafe starship.toml waybar
 
 HOME_DIR := $(HOME)
 REPO_DIR := $(HOME_DIR)/Configs
 
-.PHONY: move link unlink restore status
+.PHONY: copy link unlink restore status
 
-move:
-	@echo "Moving configs into omarchy-configs repo..."
+copy:
+	@echo "Copying configs into omarchy-configs repo..."
 	@for item in $(CONFIGS); do \
 		if [ -e $(HOME_DIR)/.config/$$item ]; then \
 			mkdir -p $(REPO_DIR)/$$item/.config; \
-			mv $(HOME_DIR)/.config/$$item $(REPO_DIR)/$$item/.config/; \
-			printf "Moved $$item\n"; \
+			cp -r $(HOME_DIR)/.config/$$item $(REPO_DIR)/$$item/.config/; \
+			printf "Copied $$item\n"; \
 		else \
 			printf "Skipping $$item (not found)\n"; \
 		fi; \
