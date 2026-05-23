@@ -10,10 +10,11 @@ services:
       USERNAME: "ale"
       PASSWORD: "4862"
       TZ: "Europe/Zurich"
-      ARGUMENTS: "-rtc base=localtime,clock=host,driftfix=slew"
+      ARGUMENTS: "-rtc base=localtime,clock=host,driftfix=slew -device qemu-xhci -device usb-host,vendorid=0x0578,productid=0x0578"
     devices:
       - /dev/kvm
       - /dev/net/tun
+      - /dev/bus/usb
     cap_add:
       - NET_ADMIN
     ports:
