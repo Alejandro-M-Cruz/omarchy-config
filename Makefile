@@ -4,7 +4,7 @@ CONFIGS = alacritty backgrounds chromium-flags.conf CodeUser foot ghostty hypr k
 HOME_DIR := $(HOME)
 REPO_DIR := $(HOME_DIR)/Config
 
-.PHONY: copy link unlink restore status
+.PHONY: copy move link unlink restore status
 
 copy:
 	@echo "Copying configs into omarchy-configs repo..."
@@ -13,6 +13,18 @@ copy:
 			mkdir -p $(REPO_DIR)/$$item/.config; \
 			cp -r $(HOME_DIR)/.config/$$item $(REPO_DIR)/$$item/.config/; \
 			printf "Copied $$item\n"; \
+		else \
+			printf "Skipping $$item (not found)\n"; \
+		fi; \
+	done
+
+move:
+	@echo "Moving configs into omarchy-configs repo..."
+	@for item in $(CONFIGS); do \
+		if [ -e $(HOME_DIR)/.config/$$item ]; then \
+			mkdir -p $(REPO_DIR)/$$item/.config; \
+			mv $(HOME_DIR)/.config/$$item $(REPO_DIR)/$$item/.config/; \
+			printf "Moved $$item\n"; \
 		else \
 			printf "Skipping $$item (not found)\n"; \
 		fi; \
