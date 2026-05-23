@@ -9,5 +9,3 @@ source ~/.local/share/omarchy/default/bash/rc
 #
 # Make an alias for invoking commands you use constantly
 # alias p='python'
-
-. "$HOME/.local/share/../bin/env"
