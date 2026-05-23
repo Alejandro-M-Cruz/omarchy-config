@@ -14,7 +14,8 @@
     "windowControlHeight": 42,
     "profileAssociations": {
         "workspaces": {
-            "file:///home/ale/Config": "__default__profile__"
+            "file:///home/ale/Config": "__default__profile__",
+            "file:///home/ale/Projects/backup": "__default__profile__"
         },
         "emptyWindows": {}
     },
@@ -42,8 +43,8 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 35,
             "activityBarWidth": 48,
-            "sideBarWidth": 315,
-            "auxiliaryBarWidth": 240,
+            "sideBarWidth": 170,
+            "auxiliaryBarWidth": 208,
             "statusBarHeight": 22,
             "windowBorder": false
         }
@@ -57,7 +58,7 @@
                 "x": 0,
                 "y": 0,
                 "width": 1270,
-                "height": 697,
+                "height": 1394,
                 "zoomLevel": 1
             }
         },
@@ -65,10 +66,14 @@
     },
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
-            "sideBarWidth": 315,
-            "auxiliaryBarWidth": 240,
+            "sideBarWidth": 170,
+            "auxiliaryBarWidth": 208,
             "workspaces": {
                 "b64c18471a6907ff6ef36c7df2976683": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "a6e7cd7950bbe99e6257ebf65b562be3": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": true
                 }
