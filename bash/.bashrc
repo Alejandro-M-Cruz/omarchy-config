@@ -10,4 +10,13 @@ source ~/.local/share/omarchy/default/bash/rc
 # Make an alias for invoking commands you use constantly
 # alias p='python'
 
+function gamma() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: gamma <value>"
+    return 1
+  fi
+
+  hyprctl hyprsunset gamma "$1"
+}
+
 . "$HOME/.local/share/../bin/env"
