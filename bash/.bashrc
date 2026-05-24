@@ -19,4 +19,13 @@ function gamma() {
   hyprctl hyprsunset gamma "$1"
 }
 
+function temperature() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: temperature <value>"
+    return 1
+  fi
+
+  hyprctl hyprsunset temperature "$1"
+}
+
 . "$HOME/.local/share/../bin/env"
