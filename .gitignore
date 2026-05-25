@@ -1,4 +1,4 @@
-*.pèm
+*.pem
 .env
 .history
 .cache

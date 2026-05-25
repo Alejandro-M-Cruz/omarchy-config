@@ -1,4 +1,4 @@
-{ "workbench.colorTheme": "Catppuccin Mocha",  
+{ "workbench.colorTheme": "AMOLED Github Theme",  
   "update.mode": "none",
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.enable": {
@@ -6,5 +6,7 @@
     "plaintext": true,
     "markdown": true,
     "scminput": false
-  }
+  },
+  "editor.tabSize": 2,
+  "terminal.integrated.allowChords": false
 }
