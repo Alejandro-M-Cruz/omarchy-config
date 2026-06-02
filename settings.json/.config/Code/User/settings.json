@@ -5,8 +5,10 @@
     "*": true,
     "plaintext": true,
     "markdown": true,
-    "scminput": false
+    "scminput": false,
+    "ignore": true
   },
   "editor.tabSize": 2,
-  "terminal.integrated.allowChords": false
+  "terminal.integrated.allowChords": false,
+  "explorer.confirmDragAndDrop": false
 }
