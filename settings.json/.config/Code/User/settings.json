@@ -1,4 +1,4 @@
-{ "workbench.colorTheme": "AMOLED Github Theme",  
+{ "workbench.colorTheme": "AMOLED Github Theme",
   "update.mode": "none",
   "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.enable": {
@@ -10,5 +10,22 @@
   },
   "editor.tabSize": 2,
   "terminal.integrated.allowChords": false,
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "github.copilot.nextEditSuggestions.eagerness": "high",
+  "go.toolsEnvVars": {
+    "CGO_CFLAGS": "-I ${workspaceFolder}/bin/deps_darwin/arm64/YARA_v4.5.4/include -I ${workspaceFolder}/bin/deps_darwin/arm64/openssl-3.6.2/include",
+    "CGO_LDFLAGS": "-L ${workspaceFolder}/bin/deps_darwin/arm64/YARA_v4.5.4/lib -L ${workspaceFolder}/bin/deps_darwin/arm64/openssl-3.6.2/lib -lssl -lcrypto",
+    "PKG_CONFIG_PATH": "${workspaceFolder}/bin/deps_darwin/arm64/YARA_v4.5.4/lib/pkgconfig:${workspaceFolder}/bin/deps_darwin/arm64/openssl-3.6.2/lib/pkgconfig"
+  },
+  "go.testFlags": ["-count=1"],
+  "files.eol": "\n",
+  "go.testTimeout": "300s",
+  "files.trimTrailingWhitespace": true,
+  "go.testTags": "test",
+  "gopls":{
+      "build.buildFlags": ["-tags", "test"]
+},
+"terminal.integrated.mouseWheelScrollSensitivity": 3,
+"terminal.integrated.gpuAcceleration": "off",
+"workbench.browser.openLocalhostLinks": false
 }

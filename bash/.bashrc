@@ -3,29 +3,31 @@
 
 # All the default Omarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
-source ~/.local/share/omarchy/default/bash/rc
+# /etc/omarchy.conf is written by omarchy-dev-link. When absent, force the
+# package default instead of preserving a stale inherited dev-link value before
+# we decide which rc file to source.
+if [[ -f /etc/omarchy.conf ]]; then
+  source /etc/omarchy.conf
+  export OMARCHY_PATH="${OMARCHY_PATH:-/usr/share/omarchy}"
+else
+  export OMARCHY_PATH=/usr/share/omarchy
+fi
+source "$OMARCHY_PATH/default/bash/rc"
 
 # Add your own exports, aliases, and functions here.
 #
 # Make an alias for invoking commands you use constantly
 # alias p='python'
 
+# Software dimming, 0-100. Goes below what the monitor buttons allow.
 function gamma() {
-  if [[ -z "$1" ]]; then
-    echo "Usage: gamma <value>"
-    return 1
-  fi
-
   hyprctl hyprsunset gamma "$1"
 }
 
+# Colour temperature in K. Lower = warmer (nightlight is 4000, neutral 6500).
 function temperature() {
-  if [[ -z "$1" ]]; then
-    echo "Usage: temperature <value>"
-    return 1
-  fi
-
   hyprctl hyprsunset temperature "$1"
 }
 
 . "$HOME/.local/share/../bin/env"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
