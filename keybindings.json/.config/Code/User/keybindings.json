@@ -46,5 +46,18 @@
             "text": "\u001b\r"
         },
         "when": "terminalFocus"
+    },
+    {
+        // Omarchy SUPER+C sends ctrl+c; make it copy in the integrated terminal.
+        // Clears the selection so a second press still sends SIGINT.
+        "key": "ctrl+c",
+        "command": "workbench.action.terminal.copyAndClearSelection",
+        "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected"
+    },
+    {
+        // Omarchy SUPER+V sends ctrl+v; make it paste in the integrated terminal.
+        "key": "ctrl+v",
+        "command": "workbench.action.terminal.paste",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
     }
 ]
