@@ -31,11 +31,3 @@ function temperature() {
 
 . "$HOME/.local/share/../bin/env"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
-
-# pnpm
-export PNPM_HOME="/home/ale/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac
-# pnpm end
