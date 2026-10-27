@@ -27,5 +27,30 @@
 },
 "terminal.integrated.mouseWheelScrollSensitivity": 3,
 "terminal.integrated.gpuAcceleration": "off",
-"workbench.browser.openLocalhostLinks": false
+"workbench.browser.openLocalhostLinks": false,
+"dbcode.connections": [
+  {
+    "connectionId": "Y3qXWFO8J4atqtfQjdOta",
+    "name": "postgres local",
+    "driver": "postgres",
+    "connectionType": "host",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "ssl": false,
+    "authMethod": "password",
+    "username": "wesite",
+    "password": "",
+    "savePassword": "secretStorage",
+    "database": "postgres",
+    "readOnly": false,
+    "postConnectionSqlType": "inline",
+    "connectionTimeout": 30,
+    "idleTimeout": 300,
+    "maxConnections": 10,
+    "pinnedConnectionTimeout": "0",
+    "introspection": {
+      "progressive": false
+    }
+  }
+]
 }

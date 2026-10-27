@@ -29,5 +29,11 @@ function temperature() {
   hyprctl hyprsunset temperature "$1"
 }
 
+function previews() {
+  for p in $(pgrep -f 'astro.mjs (dev|preview)'); do
+    echo "$p  $(ss -ltnpH | grep "pid=$p," | awk '{print $4}')  $(readlink /proc/$p/cwd)  $(tr '\0' ' ' </proc/$p/cmdline | grep -oE '(dev|preview).*')"
+  done
+}
+
 . "$HOME/.local/share/../bin/env"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"

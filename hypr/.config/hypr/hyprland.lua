@@ -27,3 +27,9 @@ require("default.hypr.toggles")
 
 -- Add any other personal Hyprland configuration below.
 -- o.window("qemu", { workspace = "5" })
+
+-- Hybrid laptop: both displays and Hyprland run on the AMD iGPU, so decode video
+-- there too. Omarchy's nvidia.lua points VA-API/GLX at NVIDIA, which makes Chromium
+-- shuttle every video frame between GPUs (stutter, blur, GPU-process crashes).
+hl.env("LIBVA_DRIVER_NAME", "radeonsi")
+hl.env("__GLX_VENDOR_LIBRARY_NAME", "mesa")
