@@ -35,5 +35,14 @@ function previews() {
   done
 }
 
+function opreviews() {
+  for p in $(pgrep -f 'astro.mjs (dev|preview)'); do
+    for port in $(ss -ltnpH | grep "pid=$p," | awk '{print $4}' | grep -oE '[0-9]+$' | sort -u); do
+      echo "http://localhost:$port  $(readlink /proc/$p/cwd)"
+      (xdg-open "http://localhost:$port" &>/dev/null &)
+    done
+  done
+}
+
 . "$HOME/.local/share/../bin/env"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
